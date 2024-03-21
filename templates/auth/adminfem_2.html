@@ -1,0 +1,55 @@
+{% extends './base.html' %}
+
+{% block title %}Admin{% endblock %}
+{% block customCSS %}
+<link rel="Stylesheet" href="{{ url_for('static', filename='admin.css')}}">
+{% endblock %}
+
+{% block body %}
+
+<div class="menu-btn">
+  <i class="fas fa-bars fa-2x"></i>
+</div>
+<div class="container">
+
+  <div class="nav-main">
+    <img src="static/img/brand.jpg" alt="Angeles logo" class="nav-brand">
+    <ul>
+     <h5 class="header" style="color: aliceblue;">Bienvenido "{{current_user.fullname}}"</h5>
+    </ul>
+    <ul class="nav-menu">
+      <a href="{{url_for('logout')}}">Cerrar Sesion</a>
+    </ul>
+    
+  </div>
+  <hr>
+  <div>
+    <form action="{{ url_for('RegistrarFoto') }}" method="POST" autocomplete="on" enctype="multipart/form-data">
+      <input type="hidden" name="csrf_token" value="{{ csrf_token()}}">
+        <label class="form-group mb-5 ">
+            <input multiple="true" type="file" name="archivo" class="custom-file-input"  accept=".jpg,.png,.jpeg,.mp4,.avi,.gif" required >
+            <button type="submit" class="btn btn-primary btn-sm fa-1x">Subir imagen</button>
+        </label>
+    </form>
+    {% for foto in list_Photos %}
+       <div class="media">
+          <img src="static/archivos_2/{{ foto }}" class="mr-3" alt="{{ foto }}">
+          <div class="media-body">
+              <h5>
+                <p>
+                  <span class="index">{{loop.index}}</span>
+                  <span class="namePhone">{{ foto }}</span>
+                </p>
+              </h5>
+              <p>
+                <a href="{{ url_for('EliminarFoto', nombreFoto = foto ) }}" type="button" class="btn btn btn-sm" >Eliminar imagen</a>
+              </p>
+          </div>
+       </div>
+     {% endfor %}
+  </div>
+  
+</div> 
+<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+<script src="static/admin.js"></script>
+{% endblock %}

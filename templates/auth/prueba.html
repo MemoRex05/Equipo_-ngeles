@@ -1,0 +1,101 @@
+{% extends './base.html' %}
+
+{% block title %}Equipo Angeles{% endblock %}
+
+{% block customCSS %}
+<link rel="stylesheet" href="{{ url_for('static', filename='prueba.css')}}">
+{% endblock %}
+
+{% block body %}
+
+<div class="menu-btn">
+   <i class="fas fa-bars fa-2x"></i>
+</div>
+<div class="container">
+
+   <nav class= "nav-main">
+       <img src="static/img/brand.jpg" alt="Equipo Angeles" class="nav-brand">
+    
+       <ul class="nav-menu">
+           
+           <li>
+               <a href="#">Inicio</a>
+           </li>
+           <li>
+               <a href="#">Reuniones del Equipo</a>
+           </li>
+           <li>
+               <a href="#">Historia del Equipo</a>
+           </li>
+        </ul>    
+        <ul class="nav-user">
+            <li>
+              <a href="login">Iniciar Sesion</a>
+            </li>
+        </ul>
+   </nav>
+   <hr color="grey">
+   <!--Imagen grande-->
+   <header class="showcase">
+       <h2>Bienvenido</h2>
+           <p align = "center"> <b>"¡Aqui tu esfuerzo no pasará desapercibido!".</b></p>
+       <!--<a haref="#" class="btn">Entrar<i class="fas fa-angle-double-right"></i></a>-->
+   </header>
+   <!-- Recuadros de Noticias -->
+   <div class="new-cards">
+       <div>
+           <img src="static/img/news1.jpg" alt="News1">
+           <h3>Angeles Varonil</h3>
+           <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo, odit omnis corporis sequi sed dignissimos tenetur ipsam enim totam explicabo.</p>
+           <a href="/AngelesVar">Galería<i class="fas fa-angle-double-right"></i></a>
+       </div>
+       <div>
+           <img src="static/img/news2.jpg" alt="News2">
+           <h3>Angeles Femenil</h3>
+           <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo, odit omnis corporis sequi sed dignissimos tenetur ipsam enim totam explicabo.</p>
+           <a href="/AngelesFem">Galería<i class="fas fa-angle-double-right"></i></a>
+       </div>
+       <div>
+        <img src="static/img/news5.jpg" alt="News2">
+        <h3>Angeles Femenil 2A</h3>
+        <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo, odit omnis corporis sequi sed dignissimos tenetur ipsam enim totam explicabo.</p>
+        <a href="/AngelesFem_2">Galería<i class="fas fa-angle-double-right"></i></a>
+       </div>
+       <div>
+           <img src="static/img/news3.jpg" alt="News3">
+           <h3>Angeles F Varonil</h3>
+           <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo, odit omnis corporis sequi sed dignissimos tenetur ipsam enim totam explicabo.</p>
+           <a href="/AngelesVar_2">Galería<i class="fas fa-angle-double-right"></i></a>
+       </div>
+       <div>
+           <img src="static/img/news4.jpg" alt="News4">
+           <h3>Angeles F Femenil</h3>
+           <p > Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo, odit omnis corporis sequi sed dignissimos tenetur ipsam enim totam explicabo.</p>
+           <a href="/AngelesFem_3">Galería<i class="fas fa-angle-double-right"></i></a>
+       </div>
+   </div>
+   <section class="Social">
+       <p>Contacto</p>
+       <div class="links">
+           <a href="https://www.facebook.com/MemoRex05">
+               <i class="fab fa-facebook-f"></i>
+           </a>
+           <a href="https://t.me/Memorex_12">
+               <i class="fab fa-telegram"></i>
+           </a>
+           <a href="https://www.instagram.com/_memorex_">
+               <i class="fab fa-instagram"></i>
+           </a>
+           <a href="https://wa.me/+525636454955/">
+               <i class="fab fa-whatsapp"></i>
+           </a>
+
+       </div>
+    </section>
+</div>
+
+<!-- Scrollreveal-->
+<script src="https://unpkg.com/scrollreveal"></script>
+<!-- Efecto boton js-->
+<script src="static/prueba.js"></script>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends './base.html' %}
+
+{% block title %}Angeles Varonil_F{% endblock %}
+{% block customCSS %}
+<link rel="stylesheet" href="static/imagenescss/AngelesVar.css">
+{% endblock %}
+
+{% block body %}
+
+<div class="container">
+  <nav class="nav-main">
+    <a alt="Angeles logo" href="/prueba"><img src="static/img/brand.jpg" class="nav-brand"></a>
+  </nav>
+</div> 
+<h1><span>Imagen Gallery</span></h1>
+
+
+{% for foto in list_Photos %}
+<div class="media">
+  <img src="static/archivos_3/{{ foto }}"  alt="{{ foto }}">
+</div>
+{% endfor %}
+    
+{% endblock %}
